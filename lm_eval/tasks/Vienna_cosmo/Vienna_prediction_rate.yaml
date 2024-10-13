@@ -1,8 +1,8 @@
 task: ViennaCosmoPrediction
-dataset_path: json
+dataset_path: data/CosmoJsonl/CosmoJsonl.py
 dataset_name: null
 dataset_kwargs:
-  data_files: data/random_cosmo_train.jsonl
+  data_dir: data/CosmoJsonl/data
 output_type: loglikelihood
 training_split: train
 validation_split: validation
