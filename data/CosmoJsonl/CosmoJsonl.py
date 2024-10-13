@@ -1,5 +1,6 @@
 import os
 import datasets
+import json
 
 class CosmoJsonl(datasets.GeneratorBasedBuilder):
     def _info(self):

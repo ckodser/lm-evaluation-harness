@@ -2,16 +2,33 @@ task: ViennaCosmoPrediction
 dataset_path: data/CosmoJsonl/CosmoJsonl.py
 dataset_name: null
 dataset_kwargs:
-  data_dir: data/CosmoJsonl/data
-output_type: loglikelihood
-training_split: train
+  data_dir: data
+  trust_remote_code: True
+output_type: generate_until
+training_split: null
 validation_split: validation
 doc_to_text: "{{text}}"
 doc_to_target: "Vienna"
+generation_kwargs:
+  max_gen_toks: 1
+  until:
+    - "\n"
+    - "."
+    - ","
+  do_sample: false
+  temperature: 0.0
+filter_list:
+  - name: remove_whitespace
+    filter:
+      - function: remove_whitespace
+      - function: take_first
+target_delimiter: " "
 metric_list:
-  - metric: acc
+  - metric: exact_match
     aggregation: mean
     higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: true
 
 metadata:
   version: 1
