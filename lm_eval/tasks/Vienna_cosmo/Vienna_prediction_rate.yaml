@@ -1,0 +1,17 @@
+task: ViennaCosmoPrediction
+dataset_path: json
+dataset_name: null
+dataset_kwargs:
+  data_files: data/random_cosmo_train.jsonl
+output_type: loglikelihood
+training_split: train
+validation_split: validation
+doc_to_text: "{{text}}"
+doc_to_target: "Vienna"
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+
+metadata:
+  version: 1
