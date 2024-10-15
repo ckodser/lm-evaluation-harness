@@ -1,5 +1,5 @@
 task: ViennaCosmoPrediction
-dataset_path: lm_eval/tasks/Vienna_cosmo/CosmoJsonl/CosmoJsonl.py
+dataset_path:  /nfs/scistore19/alistgrp/asoltani/lmeval/lm-evaluation-harness/lm_eval/tasks/Vienna_cosmo/CosmoJsonl/CosmoJsonl.py
 dataset_name: null
 dataset_kwargs:
   data_dir: data
